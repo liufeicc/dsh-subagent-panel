@@ -1,0 +1,8 @@
+# 子代理只读视图 —— 纯客户端插件。
+#
+# Host 侧只插入一个空壳；真正的逻辑在 client.js 里注册 conversation.view。
+# 客户端依赖见 package.json 的 dsh.client.inject（必须声明 conversation，
+# 否则 slot 的声明方还没加载；locale / sessions 服务由 inject 数组等待）。
+- insert:
+    - id: subagent-panel
+      name: '@local/dsh-subagent-panel'
